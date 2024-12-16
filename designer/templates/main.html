@@ -1,0 +1,179 @@
+{% load static %}
+
+<!-- header section  -->
+{% include 'header.html' %}
+
+<!-- home section starts  -->
+
+
+<section id="home" class="home container-fluid p-0">
+
+<div class="row hero">
+  <div class="col pl-3 ml-sm-5 p-0">
+    <h1 class="text1">Trinetra DESIGN</h1>
+    <h3 class="text2">Images store and service provider</h3>
+    <!-- <marquee behavior="" direction=""><h3 class="text2">You Can Upload Your Projects/Images </h3></marquee> -->
+  </div>
+</div>
+
+<div class="counting">
+
+<div class="box">
+  <h1 class="count" data-count="1200">1200+</h1>
+  <h3>working hours</h3>
+</div>
+
+<div class="box">
+  <h1 class="count" data-count="15">15+</h1>
+  <h3>awards</h3>
+</div>
+
+<div class="box">
+  <h1 class="count" data-count="1000">1000+</h1>
+  <h3>clients</h3>
+</div>
+
+<div class="box">
+  <h1 class="count" data-count="840">840+</h1>
+  <h3>projects</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- home section ends -->
+
+
+<!-- about section starts  -->
+
+<section id="about" class="about container">
+
+<h1 class="heading">about us</h1>
+
+<div class="row align-items-center">
+
+  <div class="col-md-6 image">
+    <img src="{% static 'img/Trinetra.jpg'%}" width="90%" alt="">
+  </div>
+
+  <div class="col-md-6 info">
+    <h2>the best Images store in the city</h2>
+    <p>Welcome to Trinetra image store, your go-to destination for high-quality, royalty-free images. Whether you're a creative professional, a student, or a hobbyist, we offer an extensive collection of images across diverse categories, all available for free download. Our library is designed to fuel your creative projects without the hassle of licensing fees. Explore, download, and use our images for personal or commercial purposes with complete peace of mind. Start creating with Trinetra today</p>
+    {% comment %} <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam voluptatibus sint totam, ea velit eius. Praesentium consequuntur sint porro, similique ut corrupti dolorem eligendi. Sunt porro quos libero illum quo officia laboriosam quisquam, nam totam?</p> {% endcomment %}
+    <div class="icons">
+      <a href="https://www.facebook.com/share/G7AoAo2ntFQ14vet/" class="fab fa-facebook-f"></a>
+      {% comment %} <a href="Follow this link to join my WhatsApp group: https://chat.whatsapp.com/JVIHA9XekinEwlpU1cVVJ2" class="fab fa-whatsapp"></a> {% endcomment %}
+      <a href="https://www.instagram.com/_private_access?igsh=MXVlY2pwYWd2NTdmZg==" class="fab fa-instagram"></a>
+      <a href="https://www.linkedin.com/in/indrajeet-sharma-9a3348232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="fab fa-linkedin "></a>
+    </div>
+  </div>
+
+</div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- service section starts  -->
+
+<section id="service" class="service">
+
+<h1 class="heading">our services</h1>
+
+<div class="box-container mx-auto">
+
+  <div class="box">
+    <div class="fas fa-palette"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex unde assumenda odio sint voluptatibus sed, quae deserunt fugit voluptates nisi!</p>
+  </div>
+
+  <div class="box">
+    <div class="fas fa-tools"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex unde assumenda odio sint voluptatibus sed, quae deserunt fugit voluptates nisi!</p>
+  </div>
+
+  <div class="box">
+    <div class="fas fa-house-user"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex unde assumenda odio sint voluptatibus sed, quae deserunt fugit voluptates nisi!</p>
+  </div>
+
+  <div class="box">
+    <div class="fas fa-couch"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex unde assumenda odio sint voluptatibus sed, quae deserunt fugit voluptates nisi!</p>
+  </div>
+
+  <div class="box">
+    <div class="fas fa-bed"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex unde assumenda odio sint voluptatibus sed, quae deserunt fugit voluptates nisi!</p>
+  </div>
+
+  {% comment %} <div class="box">
+    <div class="fas fa-bath"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex unde assumenda odio sint voluptatibus sed, quae deserunt fugit voluptates nisi!</p>
+  </div> {% endcomment %}
+
+</div>
+
+</section>
+
+<!-- service section ends -->
+
+<!-- project section starts   -->
+
+{%include 'project.html' %}
+
+<!-- project section ends -->
+
+<!-- contact section starts  -->
+
+<section id="contact" class="contact">
+
+<h1 class="heading">contact us</h1>
+
+<div class="contact-box-container mx-auto">
+
+<div class="contact-box">
+  <i class="fas fa-map-marker-alt"></i>
+  
+  <h3>Bihar, india - 841428</h3>
+</div>
+
+<div class="contact-box">
+  <i class="fas fa-envelope"></i>
+  <h3>indrajee323@gmail.com</h3>
+</div>
+
+<div class="contact-box">
+  <i class="fas fa-phone"></i>
+  <h3>+917781033575</h3>
+</div>
+
+</div>
+<h1 class="heading">Registration</h1>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        {{ message }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if ers %}
+<p style=color:red>{{ers}}<p>
+  {% endif %}
+{% include 'regform.html' %}
+
+</section>
+
+<!-- contact section ends -->
+
+<!-- footer section starts  -->
+
+{% include 'footer.html' %}
+<!-- footer section ends -->
+
+

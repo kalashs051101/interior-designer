@@ -1,0 +1,80 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>projects Upload Form | Designer </title>
+  <link rel="stylesheet" href="{% static 'login_styles.css' %}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+  body{
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("{% static 'img/img2.jpg' %}") no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+#upload{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  /* border: 2px solid rgba(255, 255, 255, .2); */
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
+}
+
+</style>
+<body>
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+          {{ message }}
+      </li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+
+  <div class="wrapper">
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h1>Upload Projects </h1>
+      <div class="input-box">
+        <!-- <label style="font-size: medium;">Your Name</label> -->
+        <input type="text" name="ltitle" placeholder="name" required>
+        <!-- <i class='bx bxs-user'></i> -->
+      </div>
+      <div class="input-box">
+        <!-- <label style="font-size: medium;">About your Project </label> -->
+        <input type="text"name="ldesc" placeholder="project details" required>
+        <!-- <i class='bx bxs-lock-alt' ></i> -->
+      </div>
+      <div class="input-box">
+        <label style="font-size: medium;">Projects Photo</label>
+
+        <input type="file" id="upload" name="lupload"  >
+        <!-- <i class='bx bxs-lock-alt' ></i> -->
+      </div>
+      <br>
+      <button type="submit" class="btn">Upload</button>
+      
+    </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{% static 'main.js' %}"></script>
+</body>
+
+</html> 
+

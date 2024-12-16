@@ -1,0 +1,47 @@
+{% load static %}
+
+<section id="project" class="project">
+
+    <div class="heading">our projects</div>
+    
+    <div class="box-container mx-auto">
+   
+    <div class="box">
+      <a href="{% url 'project' %}" title="{{x.title}}">
+        <img src="{% static 'img/Trinetra.jpg' %}" alt="">
+      </a>
+    </div>
+    
+    <div class="box">
+      <a href="{% url 'project' %}" title="hall">
+        <img src="{% static 'img/img2.jpg' %}" alt="">
+      </a>
+    </div>
+    
+    <div class="box">
+      <a href="{% url 'project' %}" title="pole">
+        <img src="{% static 'img/img3.jpg' %}" alt="">
+      </a>
+    </div>
+    
+    <div class="box">
+      <a href="{% url 'project' %}" title="kitchen">
+        <img src="{% static 'img/img4.jpg' %}" alt="">
+      </a>
+    </div>
+    
+    <div class="box">
+      <a href="{% url 'project' %}" title="bath">
+        <img src="{% static 'img/img5.jpg' %}" alt="">
+      </a>
+    </div>
+    
+    <div class="box">
+      <a href="{% url 'project' %}" title="toilet">
+        <img src="{% static 'img/img6.jpg' %}" alt="">
+      </a>
+    </div>
+    
+    </div>
+   
+    </section>

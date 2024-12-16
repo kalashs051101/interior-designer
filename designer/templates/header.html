@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- magnific popup css link  -->
+  {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"> {% endcomment %}
+
+  <!-- font awesome file link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <!-- bootstrap file link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+
+  <title> Trinetra Design </title>
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header fixed-top">
+
+<a href="#" class="logo"><img src="{% static 'img/logo12.jpg' %}" alt=""></a>
+{% if user.is_authenticated %}
+<h3> Welcome {{user.username}}<h3>
+  {% endif %}
+
+<nav>
+   
+  <ul>
+    <li><a href="{% url 'home'%}">home</a></li>
+    <li><a href="#about">about</a></li>
+    <li><a href="#service" >services</a></li>
+    <li><a href="{% url 'project' %}">project</a></li>
+    {%if user.is_authenticated %}
+    <li><a href="{%url 'uploadproject' user.id %}">upload</a></li>
+    {% endif %}
+    {% comment %} {% if not  user.is_authenticated %}
+    <li><a style="color:orange" href="{% url 'home'%}">Registration</a></li>
+    {% endif %} {% endcomment %}
+
+    {% if user.is_authenticated %}
+    <li><a href="{%url 'updatedata' user.id %} ">Edit</a></li>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <li><a style="color:red;" href="{% url 'logout' %}">Logout</a></li>
+    {% else %}
+    
+    <li><a style="color:red;" href="{% url 'login' %}">Login</a></li>
+    {% endif %}
+  </ul>
+</nav>
+
+<div class="fas fa-bars"></div>
+
+</header>
